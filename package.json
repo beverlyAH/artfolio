@@ -1,0 +1,46 @@
+{
+  "name": "artfolio",
+  "version": "1.0.0",
+  "description": "artists' portfolio display app. frontend w/ backend client included.",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "",
+    "start": "node server/index.js",
+    "dev-server": "nodemon server/index.js",
+    "dev-build": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/beverlyAH/artfolio.git"
+  },
+  "author": "Beverly Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beverlyAH/artfolio/issues"
+  },
+  "homepage": "https://github.com/beverlyAH/artfolio#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "node": "^12.10.0",
+    "path": "^0.12.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.40.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
