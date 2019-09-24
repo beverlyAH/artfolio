@@ -1,17 +1,22 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, '/client/dist');
+const path = require('path')
+
+var ADMIN_SRC_DIR = path.join(__dirname, '/client/admin/src')
+var ADMIN_DIST_DIR = path.join(__dirname, '/client/admin/dist')
+var PUBLIC_SRC_DIR = path.join(__dirname, '/client/public/src')
+var PUBLIC_DIST_DIR = path.join(__dirname, '/client/public/dist')
 
 module.exports = {
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: {
+    admin: `${ADMIN_SRC_DIR}/index.jsx`,
+    public: `${PUBLIC_SRC_DIR}/index.jsx`
+  },
   output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
+    filename: '../client/[name]/dist/[name].bundle.js'
   },
   module: {
     rules: [{
         test: /\.jsx?/,
-        include: SRC_DIR,
+        include: __dirname + '/client',
         use: 'babel-loader'
       },
       {
