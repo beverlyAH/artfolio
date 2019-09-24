@@ -24,6 +24,7 @@ let PORT = process.env.PORT || 8080
 app.listen(PORT, (err) => {
   if (err) {
     console.log('ERROR connecting to server:', err)
+  } else {
+    console.log(`artfolio is listening on port ${PORT}!`)
   }
-  console.log(`artfolio is listening on port ${PORT}!`)
 })
