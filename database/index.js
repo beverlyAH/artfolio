@@ -19,9 +19,10 @@ sequelize
       type: Sequelize.STRING,
       unique: true
     },
-    salt: Sequelize.STRING
+    salt: Sequelize.STRING,
+    twitter: Sequelize.STRING
   })
-  
+
   const Work = sequelize.define('work', {
     title: Sequelize.STRING,
     work_id: {
@@ -34,13 +35,19 @@ sequelize
   Work.belongsTo(User)
 
   const Session = sequelize.define('session', {
-    hash: Sequelize.STRING,
-    userId: {
-      type: Sequelize.TEXT
-    }
+    hash: Sequelize.STRING
   })
   Session.belongsTo(User)
 
+  const Blog = sequelize.define('blog', {
+    title: Sequelize.STRING,
+    text: Sequelize.TEXT,
+    date: Sequelize.DATE,
+    category: Sequelize.STRING,
+    keywords: [Sequelize.STRING]
+  })
+  Blog.belongsTo(User)
+  
   module.exports = {
     User, Work, Session
   }
