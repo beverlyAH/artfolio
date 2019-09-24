@@ -1,0 +1,22 @@
+body {
+  background-color: lightgrey
+}
+
+.rest {
+  width: 75%
+  margin-right: 1rem;
+}
+
+.sidebar {
+  font-size: 2rem;
+  font-family: 'Slabo 27px', serif;
+  width: 15rem;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  height: 200vh;
+  background-color: teal;
+  padding: .5rem;
+}
+li {
+  list-style-type: none;
+}
