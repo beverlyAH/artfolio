@@ -3,6 +3,7 @@ const parser = require('body-parser')
 const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
+const db = require('../database/index.js')
 
 const headers = {
   'Access-Control-Allow-Credentials': true,
@@ -15,7 +16,8 @@ app.use(morgan('dev'))
 app.use(parser.json())
 app.use(cors(headers))
 
-app.use(express.static(__dirname + '/../client/dist'))
+app.use('/', express.static(__dirname + '/../client/public/dist'))
+app.use('/admin/', express.static(__dirname + '/../client/admin/dist'))
 
 let PORT = process.env.PORT || 8080
 
