@@ -7,7 +7,7 @@ const db = require('../database/index.js')
 
 const headers = {
   'Access-Control-Allow-Credentials': true,
-  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Origin': 'http://localhost:8080',
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
   'Access-Control-Allow-Headers': 'Content-Type'
 }
