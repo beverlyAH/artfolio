@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
 const db = require('../database/index.js')
+const routes = require('./routes.js')
 
 const headers = {
   'Access-Control-Allow-Credentials': true,
@@ -18,6 +19,7 @@ app.use(cors(headers))
 
 app.use('/', express.static(__dirname + '/../client/public/dist'))
 app.use('/admin/', express.static(__dirname + '/../client/admin/dist'))
+app.use('/admin/data/', routes)
 
 let PORT = process.env.PORT || 8080
 

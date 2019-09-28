@@ -1,5 +1,7 @@
 node_modules
 .DS_Store
-*bundle.js
+admin.bundle.js
+public.bundle.js
 database.sqlite
 config.js
+data.js

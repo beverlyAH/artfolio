@@ -5,23 +5,57 @@ let insert = 'INSERT INTO Work(title,category,year,url,description,userid) VALUE
 let user = 'INSERT INTO User(name,email) VALUES (?,?);'
 
 module.exports = {
-  insertUser: (params) => {
+  insertUser: (callback) => {
     db.run(user, [NAME, EMAIL], (err) => {
       if(err) {
-        return console.log(err)
+        callback(err)
       } else {
-        console.log('User inserted into database.')
+        callback(null, 'User inserted into database.')
       }
     })
   },
-  insertOne: (params) => {
+  insertOne: (params, callback) => {
     db.run(insert,
       [params.title, params.category, params.year, params.url, params.description, params.userid],
         (err) => {
       if(err) {
-        return console.log(err)
+        callback(err)
       } else {
-        console.log(`Item #${params.id} inserted!`)
+        callback(null, `Item inserted!`)
+      }
+    })
+  },
+  getUser: (params, callback) => {
+
+  },
+  getAllItems: (callback) => {
+    db.all('SELECT * FROM Work;', [], (err, data) => {
+      if(err) {
+        console.error('Error retrieving items from database: ', err)
+      } else {
+        callback(null, data)
+      }
+    })
+  },
+  getAllFromCategory: (params, callback) => {
+    
+  },
+  getOne: (params, callback) => {
+    
+  },
+  getCategories: (callback) => {
+    db.all('SELECT category FROM Work;', (err, data) => {
+      if(err) {
+        console.error('Error retrieving categories: ', err)
+      } else {
+        // filter out duplicates
+        let set = new Set()
+        for (let i = 0; i < data.length; i++) {
+          set.add(data[i].category)
+        }
+        // create new Array from duplicate-free Set
+        let categories = Array.from(set)
+        callback(null, categories)
       }
     })
   }
