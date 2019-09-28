@@ -29,9 +29,12 @@
     "babel-loader": "^8.0.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "fast-xml-parser": "^3.12.20",
     "googleapis": "^43.0.0",
+    "lodash": "^4.17.15",
     "morgan": "^1.9.1",
-    "node": "^12.10.0",
+    "node": "^8.10.0",
+    "passport": "^0.4.0",
     "path": "^0.12.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -39,11 +42,11 @@
     "react-router": "^5.0.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^5.19.0",
     "sqlite3": "^4.1.0",
     "webpack": "^4.40.2"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
     "nodemon": "^1.19.2",
     "webpack-cli": "^3.3.9"
   }
