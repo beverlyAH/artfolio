@@ -1,9 +1,7 @@
 const path = require('path')
 
 var ADMIN_SRC_DIR = path.join(__dirname, '/client/admin/src')
-var ADMIN_DIST_DIR = path.join(__dirname, '/client/admin/dist')
 var PUBLIC_SRC_DIR = path.join(__dirname, '/client/public/src')
-var PUBLIC_DIST_DIR = path.join(__dirname, '/client/public/dist')
 
 module.exports = {
   entry: {
