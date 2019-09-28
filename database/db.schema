@@ -1,0 +1,34 @@
+DROP TABLE IF EXISTS Work;
+		
+CREATE TABLE Work (
+  title VARCHAR(256) NULL DEFAULT NULL,
+  category VARCHAR(100) NULL DEFAULT NULL,
+  year INTEGER NULL DEFAULT NULL,
+  url VARCHAR(300) NULL DEFAULT NULL,
+  description VARCHAR(500) NULL DEFAULT NULL,
+  userid INTEGER NULL DEFAULT NULL,
+  FOREIGN KEY (userid) REFERENCES User(rowid)
+);
+
+DROP TABLE IF EXISTS User;
+		
+CREATE TABLE User (
+  name INTEGER NULL DEFAULT NULL,
+  email INTEGER NULL DEFAULT NULL
+);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE Work ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE User ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO Work (id,title,category,year,url,description,userid) VALUES
+-- ('','','','','','','');
+-- INSERT INTO User (id,name,email) VALUES
+-- ('','','');
